@@ -82,8 +82,8 @@ public class Calculate {
 	}
 	
 	public static double Overloadmax(double num1, double num2, double num3){
-		double minimum= Math.max(num1, num2);
-		double minimum2= Math.max(minimum, num3);
+		double minimum= Math.min(num1, num2);
+		double minimum2= Math.min(minimum, num3);
 		
 		return(minimum2);
 		}
@@ -95,43 +95,14 @@ public class Calculate {
 			return(num2);
 		}
 	}
-/*
+	
 	public static double round2(double number){
-*/		
 		
-	public static double exponent(double number, int power){
-		double answer=1;
-		for(int i=1;i<=power;i++){
-			answer*=number;
-		}
-		return(answer);
 		
-	}
-/*		
-	public static int factorial(int number){
-		int answer=1;
-		for(int i=1;i>=number;i++){
-			answer*=number;
-			
-		}
-		return(answer);
-	}
-*/
-	public static boolean isPrime(int integer){
-		if(Calculate.isDivisibleBy(integer,2)){
-			return false;
-		} else {
-			return true;	
-		}
-	}
+		
 
-	public static int gcf(int a, int b){
-		
-	}
-	
-	
-	
-	
-	
+
+
+
 
 }

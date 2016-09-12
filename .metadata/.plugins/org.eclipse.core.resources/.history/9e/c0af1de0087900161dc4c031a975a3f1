@@ -107,7 +107,7 @@ public class Calculate {
 		return(answer);
 		
 	}
-/*		
+		
 	public static int factorial(int number){
 		int answer=1;
 		for(int i=1;i>=number;i++){
@@ -116,18 +116,8 @@ public class Calculate {
 		}
 		return(answer);
 	}
-*/
-	public static boolean isPrime(int integer){
-		if(Calculate.isDivisibleBy(integer,2)){
-			return false;
-		} else {
-			return true;	
-		}
-	}
 
-	public static int gcf(int a, int b){
-		
-	}
+
 	
 	
 	
