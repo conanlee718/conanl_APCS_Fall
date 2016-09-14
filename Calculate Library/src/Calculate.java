@@ -27,7 +27,7 @@ public class Calculate {
 	}
 
 	public static double toDegrees(double number){
-		return(number*(180/3.14159));
+		return(number*(3.14159/180));
 		
 	}
 	
@@ -43,7 +43,7 @@ public class Calculate {
 	}
 	
 	public static String toImproperFrac(int num1, int num2, int num3){
-		return(num1*num3+num2+"/"+num2);
+		return(num1*num3+num2+"/"+num3);
 		
 	}
 	
@@ -55,13 +55,17 @@ public class Calculate {
 		return((a*c)+"n^2+"+(a*d+b*c)+"n"+b*d);
 		
 	}
-	
+//pre:num2!=0
 	public static boolean isDivisibleBy(int num1, int num2){
 		if(num1%num2==0){
 			return true;
-		} else {
+		} else if(num1%num2!=0){
 			return false;
+			
+		} else {
+			throw new IllegalArgumentException("Denominator cannot be 0.");
 		}
+		
 	}
 	
 	public static double absValue(double number){
@@ -81,7 +85,7 @@ public class Calculate {
 		}
 	}
 	
-	public static double Overloadmax(double num1, double num2, double num3){
+	public static double max(double num1, double num2, double num3){
 		double minimum= Math.max(num1, num2);
 		double minimum2= Math.max(minimum, num3);
 		
@@ -97,9 +101,16 @@ public class Calculate {
 	}
 /*
 	public static double round2(double number){
-*/		
 		
+	}
+*/	
+
+//pre:power>=0
 	public static double exponent(double number, int power){
+		if (power < 0){
+			throw new IllegalArgumentException("Power must be positive");
+		}
+		
 		double answer=1;
 		for(int i=1;i<=power;i++){
 			answer*=number;
@@ -107,28 +118,34 @@ public class Calculate {
 		return(answer);
 		
 	}
-/*		
+	
 	public static int factorial(int number){
 		int answer=1;
-		for(int i=1;i>=number;i++){
+		for(int i=1;i<=number;i++){
 			answer*=number;
 			
 		}
 		return(answer);
 	}
-*/
+
 	public static boolean isPrime(int integer){
-		if(Calculate.isDivisibleBy(integer,2)){
-			return false;
+		if(integer==2){
+			return true;
+		for(int i=2;i<integer;i++){
+			if(i/integer==0){
+				return false;
+		
 		} else {
-			return true;	
+			return true;
 		}
+			}
 	}
 
+/*
 	public static int gcf(int a, int b){
 		
 	}
-	
+*/
 	
 	
 	
