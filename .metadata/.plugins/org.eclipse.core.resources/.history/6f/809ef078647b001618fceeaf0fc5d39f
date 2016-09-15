@@ -100,16 +100,15 @@ public class Calculate {
 	}
 /*
 	public static double round2(double number){
-		int step;
-		step=number*100;
-		double answer; 
-		answer= (step/100);
+	
+	
 */		
 		
-	
-	
 		
 		
+		
+				
+
 
 //pre:power>=0
 	public static double exponent(double number, int power){

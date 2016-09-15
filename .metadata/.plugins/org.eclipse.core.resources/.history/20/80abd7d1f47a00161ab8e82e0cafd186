@@ -50,7 +50,7 @@ public class Calculate {
 	}
 	
 	public static String foil(int a, int b, int c, int d, String n){
-		return((a*c)+"n^2+"+((a*d)+(b*c))+"n"+(b*d));
+		return((a*c)+"n^2+"+(a*d+b*c)+"n"+b*d);
 		
 	}
 
@@ -100,16 +100,9 @@ public class Calculate {
 	}
 /*
 	public static double round2(double number){
-		int step;
-		step=number*100;
-		double answer; 
-		answer= (step/100);
-*/		
 		
-	
-	
-		
-		
+	}
+*/	
 
 //pre:power>=0
 	public static double exponent(double number, int power){
@@ -124,12 +117,8 @@ public class Calculate {
 		return(answer);
 		
 	}
-
-//pre:number>0
+	
 	public static int factorial(int number){
-		if (number<1){
-			throw new IllegalArgumentException("Number for factorial must be positive.");
-		}
 		int answer=1;
 		for(int i=1;i<=number;i++){
 			answer*=number;
@@ -137,24 +126,13 @@ public class Calculate {
 		}
 		return(answer);
 	}
-
-/*
-	public static boolean isPrime(int integer){
-		if(integer==2){
-			return true;
-		}
-		for(int i=2;i<integer;i++){
-		if(i/integer==0){
-			return false;
+/*	
+	public static boolean isPrime(int number){
 		
-		} else {
-			return true;
-		}
-		}
 	}
-		
-*/
-			
+*/	
+	
+	
 	public static int gcf(int a, int b){
 		int gcf=1;
 		for(int i=1;i<=a;i++){
@@ -164,20 +142,11 @@ public class Calculate {
 		}
 		return(gcf);
 	}
-	
-
-/*	
-	public static double sqrt(double number){
-		
-	}
-*/	
-	
-	
-	
-
-	
-	
-	
 }	
 
 
+
+
+
+
+	
