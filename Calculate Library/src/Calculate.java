@@ -131,15 +131,20 @@ public class Calculate {
 	public static boolean isPrime(int integer){
 		if(integer==2){
 			return true;
+		}
 		for(int i=2;i<integer;i++){
-			if(i/integer==0){
-				return false;
+		if(i/integer==0){
+			return false;
 		
 		} else {
 			return true;
 		}
-			}
+		}
 	}
+		
+}
+			
+	
 
 /*
 	public static int gcf(int a, int b){
@@ -148,7 +153,6 @@ public class Calculate {
 */
 	
 	
-	
+
 	
 
-}
