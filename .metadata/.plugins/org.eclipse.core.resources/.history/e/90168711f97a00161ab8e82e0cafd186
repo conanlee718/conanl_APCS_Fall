@@ -50,7 +50,7 @@ public class Calculate {
 	}
 	
 	public static String foil(int a, int b, int c, int d, String n){
-		return((a*c)+"n^2+"+((a*d)+(b*c))+"n"+(b*d));
+		return((a*c)+"n^2+"+(a*d+b*c)+"n"+b*d);
 		
 	}
 
@@ -98,16 +98,10 @@ public class Calculate {
 			return(num2);
 		}
 	}
-/*
+
 	public static double round2(double number){
-	
-	
-*/		
 		
-		
-		
-		
-				
+	}
 
 
 //pre:power>=0
@@ -136,7 +130,6 @@ public class Calculate {
 		}
 		return(answer);
 	}
-	
 /*	
 	public static boolean isPrime(int number){
 		
