@@ -24,8 +24,8 @@ public class Calculate {
 		return((number1+number2+number3)/3);
 	}
 
-	public static double toDegrees(double number){
-		return(number*(3.14159/180));
+	public static double toDegrees(double radians){
+		return(radians*(3.14159/180));
 		
 	}
 	
@@ -152,7 +152,7 @@ public class Calculate {
 			}
 		}
 	}
-*/		
+*/
 
 			
 	public static int gcf(int a, int b){
