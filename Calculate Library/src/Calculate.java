@@ -143,17 +143,17 @@ public class Calculate {
 		if(integer==2){
 			return true;
 		}
-		for(int i=2;i<integer;i++){
-		if(i/integer==0){
+			for(int i=2;i<integer;i++){
+				if(i/integer==0){
 			return false;
 		
 		} else {
 			return true;
-		}
+			}
 		}
 	}
-		
-*/
+*/		
+
 			
 	public static int gcf(int a, int b){
 		int gcf=1;
