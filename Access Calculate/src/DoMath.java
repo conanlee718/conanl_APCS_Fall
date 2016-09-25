@@ -1,4 +1,4 @@
-/**
+/*lcul01..0,l
  * 
  */
 
@@ -22,15 +22,15 @@ public class DoMath {
 		System.out.println(Calculate.isDivisibleBy(4,2));
 		System.out.println(Calculate.absValue(-100.0));
 		System.out.println(Calculate.max(5,8));
-		System.out.println(Calculate.max(5.0,8.0,10.0));
+		System.out.println(Calculate.max(5.0,6.0,9.0));
 		System.out.println(Calculate.min(5,8));
-		
+		System.out.println(Calculate.round2(123.123));
 		System.out.println(Calculate.exponent(10.0,2));
 		System.out.println(Calculate.factorial(3));
-		
-		
-		System.out.println(Calculate.gcf(8, 4));
-		
+		System.out.println(Calculate.isPrime(23));
+		System.out.println(Calculate.gcf(8, 4));     
+        System.out.println(Calculate.sqrt(16.71)); 
+		System.out.println(Calculate.quadForm(1,-2,-2));
 		
 		
 	

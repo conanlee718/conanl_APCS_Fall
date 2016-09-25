@@ -3,7 +3,7 @@
  */
 
 /**
- * @author APCS2
+ * @Conan Lee APCS2
  *
  */
 public class Calculate {
@@ -45,9 +45,15 @@ public class Calculate {
 		
 	}
 	
-	public static String toMixedNum(int num1, int num2){
-		return(num1/num2+" "+num1%num2+"/"+num2);
+//pre:denominator cannot be 0
+	public static String toMixedNum(int numerator, int denominator){
+		if(denominator==0){
+			throw new IllegalArgumentException("Denominator cannot be zero.");
+		} else {
+		return(numerator/denominator+" "+numerator%denominator+"/"+denominator);
+	    }
 	}
+
 	
 	public static String foil(int a, int b, int c, int d, String n){
 		return((a*c)+"n^2+"+((a*d)+(b*c))+"n"+(b*d));
@@ -83,13 +89,18 @@ public class Calculate {
 			return(num2);
 		}
 	}
-	
+
 	public static double max(double num1, double num2, double num3){
-		double minimum= Math.max(num1, num2);
-		double minimum2= Math.max(minimum, num3);
-		
-		return(minimum2);
+		double max1=Calculate.max((int)num1,(int) num2);
+		double max2=Calculate.max((int)max1,(int)num3);
+		if(max1>max2){
+			return(max1);
+		} else {
+			return(max2);
 		}
+	}
+		
+		
 		
 	public static int min(int num1, int num2){
 		if(num1<num2){
@@ -98,23 +109,20 @@ public class Calculate {
 			return(num2);
 		}
 	}
-/*
-	public static double round2(double number){
-		int step;
-		step=number*100;
-		double answer; 
-		answer= (step/100);
-*/		
-		
-	
-	
-		
-		
 
+	public static double round2(double number){
+        number = number * 100;
+        number = (int)number;
+        return (number/100);
+    }
+		
+	
+	
+		
 //pre:power>=0
 	public static double exponent(double number, int power){
 		if (power < 0){
-			throw new IllegalArgumentException("Power must be positive");
+			throw new IllegalArgumentException("Power cannot be less than zero");
 		}
 		
 		double answer=1;
@@ -127,8 +135,8 @@ public class Calculate {
 
 //pre:number>0
 	public static int factorial(int number){
-		if (number<1){
-			throw new IllegalArgumentException("Number for factorial must be positive.");
+		if (number<0){
+			throw new IllegalArgumentException("Number for factorial must be zero or positive.");
 		}
 		int answer=1;
 		for(int i=1;i<=number;i++){
@@ -138,21 +146,19 @@ public class Calculate {
 		return(answer);
 	}
 
-/*
-	public static boolean isPrime(int integer){
-		if(integer==2){
-			return true;
-		}
-			for(int i=2;i<integer;i++){
-				if(i/integer==0){
-			return false;
-		
-		} else {
-			return true;
-			}
-		}
-	}
-*/
+//pre:prime numbers >1
+	public static boolean isPrime(int number){
+        if(number < 2){
+            throw new IllegalArgumentException("Prime numbers are greater than 1.");
+        }
+            for (int i = 2;i<number-1;i++){
+                if(Calculate.isDivisibleBy(number, i)==true){
+                    return(false);
+                }
+            }
+            return(true);
+        }			
+			
 
 			
 	public static int gcf(int a, int b){
@@ -166,18 +172,57 @@ public class Calculate {
 	}
 	
 
-/*	
+//pre:Square root cannot be negative	
 	public static double sqrt(double number){
-		
-	}
-*/	
+        if (number<0){
+            throw new IllegalArgumentException("Cannot take the square root of a negative number");
+        }
+        double x;
+        double sqrt = number / 2;
+        do {
+            x = sqrt;
+            sqrt = (x + number/x)/2;
+        } while ((x-sqrt) != 0);
+        return Calculate.round2(sqrt);
+	}	
 	
-	
-	
+	public static String quadForm(int a, int b, int c){
+        double root1;
+        double root2;
+        if(Calculate.discriminant(a, b, c)<0){
+            return("no real roots.");
+        } else if(Calculate.discriminant(a, b, c)==0){
+            root1=-b/2*a;
+            root1=Calculate.round2(root1);
+            return("The root is "+root1);
+        } else {
+            root1=((-b+Calculate.sqrt(Calculate.discriminant(a, b, c)))/2*a);
+            root1=Calculate.round2(root1);
+            root2=((-b-Calculate.sqrt(Calculate.discriminant(a, b, c)))/2*a);
+            root2=Calculate.round2(root2);
+            double smallerroot=Calculate.min((int)root1, (int)root2);
+            double largerroot=Calculate.max((int)root1, (int)root2);
+
+            return("The roots are "+smallerroot+"and "+largerroot);
+            }
+
+
+    }
+}
 
 	
 	
 	
-}	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 
