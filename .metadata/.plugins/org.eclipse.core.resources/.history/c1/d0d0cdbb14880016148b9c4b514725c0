@@ -32,5 +32,13 @@ public class DoMath {
         System.out.println(Calculate.sqrt(16.71)); 
 		System.out.println(Calculate.quadForm(1,-2,-2));
 		
+		
+	
+	
 	}
+	
+	
+	
+	
 }
+
