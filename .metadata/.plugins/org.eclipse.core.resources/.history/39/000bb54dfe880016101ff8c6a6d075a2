@@ -11,16 +11,14 @@ public class ProcessNumbers {
 		
 	public static void main(String[] args){
 	Scanner userInput= new Scanner(System.in);
-	System.out.println("How many integers would you like to input?"); //Determines number of inputs
-	int numofInt=userInput.nextInt();
-	System.out.println("Thanks. Now input your integers!");           //Determines the input values
+	System.out.println("Input 10 integers!");
 	int min=userInput.nextInt();
 	int max=min;
 	int inputNumber=min;
 	int evenSum=0;
 	int largestEven=0;
 	
-	for(int i=1;i<numofInt;i++){
+	for(int i=1;i<10;i++){
 		inputNumber=userInput.nextInt();
 		if(inputNumber<=min){
 			min=inputNumber;
