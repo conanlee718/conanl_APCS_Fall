@@ -20,9 +20,6 @@ public class ProcessNumbers {
 	int evenSum=0;
 	int largestEven=0;
 	
-	if(inputNumber%2==0){                           //Necessary because other if is for next input #
-		evenSum+=inputNumber;
-	}
 	for(int i=1;i<numofInt;i++){
 		inputNumber=userInput.nextInt();
 		if(inputNumber<=min){
@@ -30,6 +27,8 @@ public class ProcessNumbers {
 		} else if(inputNumber>=max){
 			max=inputNumber;
 		}
+	}
+	for(int i=1;i<numofInt;i++){	
 		if(inputNumber%2==0){
 			evenSum+=inputNumber;
 			if(inputNumber>largestEven){

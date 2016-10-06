@@ -20,7 +20,7 @@ public class ProcessNumbers {
 	int evenSum=0;
 	int largestEven=0;
 	
-	if(inputNumber%2==0){                           //Necessary because other if is for next input #
+	if(inputNumber%2==0){
 		evenSum+=inputNumber;
 	}
 	for(int i=1;i<numofInt;i++){

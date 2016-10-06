@@ -4,7 +4,6 @@
 
 /**
  * @Conan Lee APCS2
- * 2nd period
  *
  */
 public class Calculate {
@@ -61,7 +60,7 @@ public class Calculate {
 		
 	}
 
-//pre:num2!=0 because cannot divide a number by 0
+//pre:num2!=0
 	public static boolean isDivisibleBy(int num1, int num2){
 		if(num2==0){
 			throw new IllegalArgumentException("Denominator cannot be 0.");
@@ -92,10 +91,10 @@ public class Calculate {
 	}
 
 	public static double max(double num1, double num2, double num3){
-		double max1=Calculate.max((int)num1,(int)num2);
+		double max1=Calculate.max((int)num1,(int) num2);
 		double max2=Calculate.max((int)max1,(int)num3);
-		if(max1>max2){                                       //take max of first and second sets
-			return(max1);                                    //comparing both max
+		if(max1>max2){
+			return(max1);
 		} else {
 			return(max2);
 		}
@@ -190,7 +189,7 @@ public class Calculate {
 	public static String quadForm(int a, int b, int c){
         double root1;
         double root2;
-        if(Calculate.discriminant(a, b, c)<0){                    //roots with i are imaginary (doesn't exist)
+        if(Calculate.discriminant(a, b, c)<0){
             return("no real roots.");
         } else if(Calculate.discriminant(a, b, c)==0){
             root1=-b/2*a;

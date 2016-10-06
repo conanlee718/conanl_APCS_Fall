@@ -20,9 +20,6 @@ public class ProcessNumbers {
 	int evenSum=0;
 	int largestEven=0;
 	
-	if(inputNumber%2==0){                           //Necessary because other if is for next input #
-		evenSum+=inputNumber;
-	}
 	for(int i=1;i<numofInt;i++){
 		inputNumber=userInput.nextInt();
 		if(inputNumber<=min){
@@ -37,8 +34,6 @@ public class ProcessNumbers {
 			}
 		}
 	}
-	
-	
 	System.out.println("Smallest number is "+min+" and largest number is "+max+".");
 	System.out.println("Sum of even numbers is "+evenSum+" and largest even is "+largestEven+".");
 	userInput.close();
