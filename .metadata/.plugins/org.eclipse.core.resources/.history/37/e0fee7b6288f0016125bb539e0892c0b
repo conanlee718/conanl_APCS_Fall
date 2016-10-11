@@ -10,14 +10,12 @@ public class Magpie2 {
 	 * takes in a user statement
 	 * returns a response based on given rules
 	 */
-
-	public static String getResponse(String statement) {
-
+	public String getResponse(String statement) {
 		String response = "";
-		
-		if (statement.trim().length()<1) {
+		/*
+		if (statement.length.trim()<1) {
 			response= "Say something, please.";
-			
+			*/
 		if (statement.indexOf("no") >= 0) {
 			response = "Why are so negative? :[";
 		} else if (statement.indexOf("mother") >= 0
@@ -42,13 +40,12 @@ public class Magpie2 {
 		return response;
 		}
 	
-	}
 
 	/**
 	 * Pick a default response to use if nothing else fits.
 	 * returns a non-committal string
 	 */
-	private static String getRandomResponse() {
+	private String getRandomResponse() {
 		final int NUMBER_OF_RESPONSES = 6;
 		double r = Math.random();
 		int whichResponse = (int) (r * NUMBER_OF_RESPONSES);

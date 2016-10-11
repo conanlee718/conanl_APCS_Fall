@@ -10,11 +10,8 @@ public class Magpie2 {
 	 * takes in a user statement
 	 * returns a response based on given rules
 	 */
-
 	public static String getResponse(String statement) {
-
 		String response = "";
-		
 		if (statement.trim().length()<1) {
 			response= "Say something, please.";
 			
@@ -41,8 +38,8 @@ public class Magpie2 {
 		}
 		return response;
 		}
-	
 	}
+	
 
 	/**
 	 * Pick a default response to use if nothing else fits.
