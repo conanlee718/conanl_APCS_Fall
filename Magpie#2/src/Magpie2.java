@@ -11,12 +11,11 @@ public class Magpie2 {
 	 * returns a response based on given rules
 	 */
 
-	public static String getResponse(String statement) {
+	public static String getResponse( String statement) {
 
 		String response = "";
 		
-		if (statement.trim().length()<1) {
-			response= "Say something, please.";
+		
 			
 		if (statement.indexOf("no") >= 0) {
 			response = "Why are so negative? :[";
@@ -35,14 +34,17 @@ public class Magpie2 {
 			response= "Wow, you are so lucky you have such a good teacher at Mills!";
 		} else if (statement.indexOf("Phillips") >= 0){
 			response="Did you know that Mr. Phillips is supposed to be retired?";
-		
+		} else if (statement.trim().length()<1) {
+			response= "Say something, please.";
 		} else {
 			response = getRandomResponse();
 		}
 		return response;
 		}
+
+		
 	
-	}
+
 
 	/**
 	 * Pick a default response to use if nothing else fits.
