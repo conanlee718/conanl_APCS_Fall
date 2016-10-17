@@ -26,12 +26,12 @@ public class Calculate {
 	}
 
 	public static double toDegrees(double radians){
-		return(radians*(3.14159/180));
+		return(radians*(180/3.14159));
 		
 	}
 	
 	public static double toRadians(double degrees){
-		return(degrees*(180/3.14159));
+		return(degrees*(3.14159/180));
 		
 	}
 
@@ -50,15 +50,16 @@ public class Calculate {
 	public static String toMixedNum(int numerator, int denominator){
 		if(denominator==0){
 			throw new IllegalArgumentException("Denominator cannot be zero.");
+		} else if(numerator%denominator==0){
+			return(numerator/denominator+"");	
 		} else {
-		return(numerator/denominator+" "+numerator%denominator+"/"+denominator);
-	    }
+		return(numerator/denominator+"_"+numerator%denominator+"/"+denominator);
+	    } 
 	}
 
 	
-	public static String foil(int a, int b, int c, int d, String n){
-		return((a*c)+"n^2+"+((a*d)+(b*c))+"n"+(b*d));
-		
+	public static String foil(int a, int b, int c, int d, String x){
+		return((a*c)+"x^2 + "+((a*d)+(b*c))+"x "+ (b*d));
 	}
 
 //pre:num2!=0 because cannot divide a number by 0
@@ -113,6 +114,7 @@ public class Calculate {
 
 	public static double round2(double number){
         number = number * 100;
+        number+=.5;
         number = (int)number;
         return (number/100);
     }
@@ -141,7 +143,7 @@ public class Calculate {
 		}
 		int answer=1;
 		for(int i=1;i<=number;i++){
-			answer*=number;
+			answer*=i;
 			
 		}
 		return(answer);
@@ -187,27 +189,30 @@ public class Calculate {
         return Calculate.round2(sqrt);
 	}	
 	
+	public static double round2ForQuad(double number){     //Mrs. Dreyer I made a new round2 specifically for 
+        number = number * 100;							   // QuadForm because the other round2 rounds up.
+        number = (int)number;
+        return (number/100);
+    }
+		
 	public static String quadForm(int a, int b, int c){
         double root1;
         double root2;
         if(Calculate.discriminant(a, b, c)<0){                    //roots with i are imaginary (doesn't exist)
-            return("no real roots.");
+            return("no real roots");
         } else if(Calculate.discriminant(a, b, c)==0){
             root1=-b/2*a;
-            root1=Calculate.round2(root1);
-            return("The root is "+root1);
+            root1=Calculate.round2ForQuad(root1);
+            return(""+root1);
         } else {
             root1=((-b+Calculate.sqrt(Calculate.discriminant(a, b, c)))/2*a);
-            root1=Calculate.round2(root1);
+            root1=Calculate.round2ForQuad(root1);
             root2=((-b-Calculate.sqrt(Calculate.discriminant(a, b, c)))/2*a);
-            root2=Calculate.round2(root2);
+            root2=Calculate.round2ForQuad(root2);
             double smallerroot=Calculate.min((int)root1, (int)root2);
             double largerroot=Calculate.max((int)root1, (int)root2);
-
-            return("The roots are "+smallerroot+"and "+largerroot);
+            return(smallerroot+" and "+largerroot);
             }
-
-
     }
 }
 
