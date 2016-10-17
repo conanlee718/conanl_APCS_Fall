@@ -18,5 +18,7 @@ public class MagpieRunner3 {
 			statement = in.nextLine();
 		}
 		in.close();
-	}	
+	}
+	
+		
 }

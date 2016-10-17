@@ -8,11 +8,12 @@ public class StringExplorer {
 		int position = sample.indexOf("quick");
 		int notFoundPsn=sample.indexOf("slow");
 		System.out.println("sample.indexOf(\"quick\") = " + position);
-		System.out.println("sample.indexOf(\"slow\")="+ notFoundPsn);
+
 		// Demonstrate the toLowerCase method.
 		String lowerCase = sample.toLowerCase();
 		System.out.println("sample.toLowerCase() = " + lowerCase);
 		System.out.println("After toLowerCase(), sample = " + sample);
+		System.out.println("sample.indexOf(\"slow\")="+ notFoundPsn);
 		// Try other methods here:indexOf(String str, int fromIndex)
 		// This version of indexOf differs from the one with one parameter in which
 		// --------------
