@@ -1,7 +1,4 @@
 //Get a default greeting and return a greeting
-	
-public class Magpie3{
-
 	public String getGreeting() {
 		return "Hello, let's talk.";
 	}
@@ -26,24 +23,26 @@ public class Magpie3{
 	
 	public String getResponse( String statement ) {
 
-		String response= "";
+		String response = "";
 		
-		if (findKeyword(statement,"no") >= 0) {
+		
+			
+		if (statement.findKeyword(statement,"no") >= 0) {
 			response = "Why are so negative? :[";
-		} else if (findKeyword(statement,"mother") >= 0
-				|| findKeyword(statement,"father") >= 0
-				|| findKeyword(statement,"sister") >= 0 ){
+		} else if (statement.findKeyword(statement,"mother") >= 0
+				|| statement.findKeyword(statement,"father") >= 0
+				|| statement.findKeyword(statement,"sister") >= 0 ){
 			response = "Tell me more about your family.";
-		} else if (findKeyword(statement,"brother") >=0){
+		} else if (statement.findKeyword(statement,"brother") >=0){
 			response= "Oh I have a brother too! What is his name?";
-		} else if (findKeyword(statement,"Dreyer") >= 0 
-				|| findKeyword(statement,"Peel") >= 0
-				|| findKeyword(statement,"Michot") >= 0
-				|| findKeyword(statement,"Williams") >= 0
-				|| findKeyword(statement,"Louie") >= 0
-				|| findKeyword(statement,"Dwyer") >= 0 ){
+		} else if (statement.findKeyword(statement,"Dreyer") >= 0 
+				|| statement.findKeyword(statement,"Peel") >= 0
+				|| statement.findKeyword(statement,"Michot") >= 0
+				|| statement.findKeyword(statement,"Williams") >= 0
+				|| statement.findKeyword(statement,"Louie") >= 0
+				|| statement.findKeyword(statement,"Dwyer") >= 0 ){
 			response= "Wow, you are so lucky you have such a good teacher at Mills!";
-		} else if (findKeyword(statement,"Phillips") >= 0){
+		} else if (statement.findKeyword(statement,"Phillips") >= 0){
 			response="Did you know that Mr. Phillips is supposed to be retired?";
 		} else if (statement.trim().length()<1) {
 			response= "Say something, please.";
@@ -52,6 +51,7 @@ public class Magpie3{
 		}
 		return response;
 	}
+
 	/**
 	 * Search for one word in phrase. The search is not case sensitive. This
 	 * method will check that the given goal is not a substring of a longer
