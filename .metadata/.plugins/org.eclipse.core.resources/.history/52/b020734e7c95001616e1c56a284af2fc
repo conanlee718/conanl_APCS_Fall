@@ -4,7 +4,6 @@ public class HourglassCode {
 		topHalf(); //Print the top half
 		System.out.println("     ||     ");
 		bottomHalf();
-		printBase();
 	}
 
 	public static void topHalf(){
