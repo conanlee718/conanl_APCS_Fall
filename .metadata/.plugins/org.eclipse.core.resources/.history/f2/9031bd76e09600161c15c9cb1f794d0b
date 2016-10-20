@@ -12,9 +12,8 @@ public class ArrayBasics {
 			if(inputNum>=-4 && inputNum<=5 && inputNum%2!=0){
 				array[i]=inputNum;
 			}
-			
 		}
-		userInput.close();
+		
 	}
-
+	
 }

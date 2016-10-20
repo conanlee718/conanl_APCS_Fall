@@ -3,13 +3,9 @@
  */
 
 /**
- * @Conan Lee APCS2 
+ * @Conan Lee APCS2
  * 2nd period
- * 
- * This Calculate class creates methods of several calculations which you can call by 
- * linking this class to another class such as DoMath.java to execute the method 
- * without actually having to write out the whole code.
- * EX: Calculate.cube(5) instead of creating another whole method and writing out code.
+ *
  */
 public class Calculate {
 	public static int square(int number){
@@ -39,7 +35,7 @@ public class Calculate {
 		
 	}
 
-	public static double discriminant(double a, double b, double c){
+	public static double discriminant(int a, int b, int c){
 		return(b*b-4*a*c);
 		
 		

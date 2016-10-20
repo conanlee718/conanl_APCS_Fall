@@ -23,7 +23,7 @@ public class HourglassCode {
 		}
 	}
 	public static void printBase(){
-	System.out.print("|");
+		System.out.print("|");
 		for (int i = 1; i<=10;i++){
 			System.out.print("\"");
 		}
