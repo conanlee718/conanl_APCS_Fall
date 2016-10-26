@@ -1,21 +1,29 @@
+/*
+import java.util.Arrays;
 import java.util.Scanner;
-
+*/
 public class Split {
 	
 	public static void main(String[] args) {
+	/*
 		Scanner userInput=new Scanner(System.in);
 		System.out.println("What is your string?");                    //asks for String statement such as apples....breadlettucecheesebreadlettuce
 		String statement=userInput.nextLine();
-		String results[]=splittedString(statement,"bread");
-			for(String part:results){
-				System.out.print(part);
-			}
-	}
-
-	public static String[] splittedString(String statement, String splitpoint){
-		return(statement.split(splitpoint));
+		String[] results=splittedString(statement,"really");
+		System.out.println(Arrays.toString(results));
+	*/	
 	}
 	 
+	public static String[] sandwichSplit(String statement, String delimiter){
+		if(statement.indexOf("bread"=0)){
+			System.out.print("Not a sandwich");
+			
+			
+			
+	}
+	
+	
+	
 	
 	
 	
@@ -30,6 +38,14 @@ public class Split {
 		
 		//play around with String.split! what happens if you "I reallyreally like apples".split("really") ?
 		
+	
+	//public static void main(String[] args){
+	//	String s="I really like really like apples";
+	//  String[] newS=s.split("really");
+	//  System.out.println(Array.toString(newS));
+	//}
+	
+	
 		
 		//Your task:
 		/*Write a method that take in a string like "applespineapplesbreadlettustomatobaconmayohambreadcheese" describing a sandwich
