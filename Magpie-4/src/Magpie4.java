@@ -33,7 +33,7 @@ public class Magpie4 {
 String response= "";
 		
 		if (findKeyword(statement,"no") >= 0) {
-			response = "Why are so negative? :[";
+			response = "Why so negative? :[";
 		} else if (findKeyword(statement,"mother") >= 0
 				|| findKeyword(statement,"father") >= 0
 				|| findKeyword(statement,"sister") >= 0 ){

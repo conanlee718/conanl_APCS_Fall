@@ -1,31 +1,44 @@
-/*
 import java.util.Arrays;
-import java.util.Scanner;
-*/
+
 public class Split {
 	
+	
 	public static void main(String[] args) {
-	/*
-		Scanner userInput=new Scanner(System.in);
-		System.out.println("What is your string?");                    //asks for String statement such as apples....breadlettucecheesebreadlettuce
-		String statement=userInput.nextLine();
-		String[] results=splittedString(statement,"really");
-		System.out.println(Arrays.toString(results));
-	*/	
+		
+	/*	
+		String statement="I really like really red apples";               //This is for playing around with string split method
+		String[] newStatement=statement.split("really");
+		System.out.println(Arrays.toString(newStatement));
+		
+	*/
 	}
+
 	 
-	public static String[] sandwichSplit(String statement, String delimiter){
-		if(statement.indexOf("bread"=0)){
-			System.out.print("Not a sandwich");
+	public static String[] splitBread(String statement){
+		String[] ingredients = statement.split("bread");
+		if (statement.indexOf("bread") < 2){
+			return ("This is not a sandwich.");
+		}
+		int noIngredients=0;
+		for(int i=0;i<ingredients.length;i++){
+			String test="";
+			if(ingredients[i]==test){
+				noIngredients++;
+			}else if(noIngredients==Ingredients.length){
+				
+			}
 			
 			
 			
+		}
+	
+	
+	
 	}
 	
 	
 	
-	
-	
+}
 	
 		//String.split();
 		//It's a method that acts on a string, <StringName>.split(<String sp>);
@@ -38,13 +51,13 @@ public class Split {
 		
 		//play around with String.split! what happens if you "I reallyreally like apples".split("really") ?
 		
-	
-	//public static void main(String[] args){
-	//	String s="I really like really like apples";
-	//  String[] newS=s.split("really");
-	//  System.out.println(Array.toString(newS));
-	//}
-	
+	/*
+	public static void main(String[] args){
+		String s="I really like really like apples";
+	  String[] newS=s.split("really");
+	  System.out.println(Array.toString(newS));
+	}
+	*/
 	
 		
 		//Your task:
@@ -62,7 +75,7 @@ public class Split {
 
 		
 
-	}
+	
 
 
 
