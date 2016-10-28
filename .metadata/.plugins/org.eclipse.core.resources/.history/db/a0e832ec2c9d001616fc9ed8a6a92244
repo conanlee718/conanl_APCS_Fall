@@ -19,7 +19,7 @@ public class Split {
 		String[] ingredients = statement.split("bread");
 		if (statement.indexOf("bread") < 2){						//testing if it is initially a sandwich. Less than 2 breads is not a sandwich.
 			return ("This is not a sandwich.");
-		}else if(statement.indexOf("bread")){
+		}else if(statement.indexOf("bread")==2){
 			
 			
 			//return(Arrays.toString(ingredients));
