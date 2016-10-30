@@ -17,13 +17,25 @@ public class Split {
 	 //chunk code: (1) is it a sandwich? (2) test 1 (3) test 2 (4) process the sandwich
 	public static String splitBread(String statement){
 		//String[] ingredients = statement.split("bread");
-		if (statement.indexOf("bread") < 2){						//testing if it is initially a sandwich. Less than 2 breads is not a sandwich.
-			return ("This is not a sandwich.");
-		}else if(statement.indexOf("bread")){
+		int countBread=0;                                                  //testing if it is initially a sandwich. Less than 2 breads is not a sandwich.
+		for(int i=0;i<statement.length()-6;i++){
+			if(statement.substring(i,i+4).equals("bread")){
+				countBread+=1;
+			}
+			if(countBread<2){
+					return("This is not a sandwich");
+			}else{
+				int firstBread=statement.indexOf("bread")+5;
+				String lastBread=statement.substring(firstBread);
+				String Ingredients=lastBread.substring(lastBread.indexOf(firstBread)+1, lastBread.indexOf("bread"));
+				String[] sandwich=Ingredients.split("bread");
 			
-			
-			//return(Arrays.toString(ingredients));
+				if(sandwich=="" || sandwich=="bread"){
+						return("This is not a sandwich");
+				}
+			}
 		}
+		return(Arrays.toString(sandwich));
 	}
 }	
 	
