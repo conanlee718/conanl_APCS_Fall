@@ -49,23 +49,20 @@ public class Split {
 	}
 	
 	public static String splitBread2(String statement){
-		String[] noSpace=statement.split(" ");	                        //This first splits the spaces, or takes out all spaces
-		String newStatement="";
-		for(String part:noSpace){										//for each loop to print out each part or content
-			newStatement+=part;
-		}								
+		String[] noSpace=statement.split(" ");							//This first splits the spaces, or takes out all spaces
+		statement=Arrays.toString(noSpace);								//Makes the array a string 
 		int countBread=0;                                               //Rest of code below is repetition of part 1 code   
 		String result="";
-		for(int i=0;i<newStatement.length()-4;i++){
-			if(newStatement.substring(i,i+5).equals("bread")){
+		for(int i=0;i<statement.length()-6;i++){
+			if(statement.substring(i,i+5).equals("bread")){
 				countBread+=1;
 			}
 		}
 		if(countBread<2){
 			result=" This is not a sandwich. ";
 		}else{
-			int firstBread=newStatement.indexOf("bread")+5;
-			String lastBread=newStatement.substring(firstBread);
+			int firstBread=statement.indexOf("bread")+5;
+			String lastBread=statement.substring(firstBread);
 			String Ingredients=lastBread.substring(0, lastBread.lastIndexOf("bread"));
 			String[] sandwich=Ingredients.split("bread");
 				if(sandwich.length == 0){

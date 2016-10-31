@@ -51,7 +51,7 @@ public class Split {
 	public static String splitBread2(String statement){
 		String[] noSpace=statement.split(" ");	                        //This first splits the spaces, or takes out all spaces
 		String newStatement="";
-		for(String part:noSpace){										//for each loop to print out each part or content
+		for(String part:noSpace){
 			newStatement+=part;
 		}								
 		int countBread=0;                                               //Rest of code below is repetition of part 1 code   

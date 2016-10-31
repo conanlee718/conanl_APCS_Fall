@@ -1,8 +1,3 @@
-//Conan Lee
-//APCS 2nd period
-//Date Finished: 10/30/16
-//Working with String split
-
 import java.util.Arrays;
 
 public class Split {
@@ -14,7 +9,7 @@ public class Split {
 		//String[] newStatement=statement.split("really");
 		//System.out.println(Arrays.toString(newStatement));
 		
-		System.out.println(splitBread("applespineapplesbreadlettustomatobaconmayohambreadcheese"));
+		System.out.println(splitBread("breadmeatbread"));
 		System.out.println(splitBread2("apples pineapples bread lettus tomato bacon mayo ham bread cheese"));
 	}
 
@@ -22,7 +17,7 @@ public class Split {
 	public static String splitBread(String statement){
 		int countBread=0;                                                  
 		String result;
-		for(int i=0;i<statement.length()-4;i++){						
+		for(int i=0;i<statement.length()-6;i++){						
 			if(statement.substring(i,i+5).equals("bread")){				//checks if substring is "bread"
 				countBread+=1;											//countBread counts amount of bread in given string
 			}
@@ -35,47 +30,43 @@ public class Split {
 			String Ingredients=lastBread.substring(0, lastBread.lastIndexOf("bread"));
 			if(Ingredients.indexOf("bread")>=0){
 				String[] sandwich=Ingredients.split("bread");
-					if(sandwich.length== 0){							//if we split bread and the result has nothing in between, then it is not a sandwich
-						result=" This is not a sandwich. ";				//^^With this, we can declare "breadbreadbread" or "breadbread" or "breadbreadbreadbread" as non sandwiches
+					if(sandwich.length== 0){								//if we split bread and the result has nothing in between, then it is not a sandwich
+						result=" This is not a sandwich. ";					//^^With this, we can declare "breadbreadbread" or "breadbread" or "breadbreadbreadbread" as non sandwiches
 					}else{
 						result=Arrays.toString(sandwich);
 					}
 			}else{
-				result="["+Ingredients+"]";
+				result=Ingredients;
 			}
 		}
-		result = result.substring(1,result.length()-1);			        //this is to take out the brackets ([]) 
+		result = result.substring(1,result.length()-1);					//this is to take out the brackets ([]) 
 		return(result);
 	}
 	
 	public static String splitBread2(String statement){
-		String[] noSpace=statement.split(" ");	                        //This first splits the spaces, or takes out all spaces
-		String newStatement="";
-		for(String part:noSpace){										//for each loop to print out each part or content
-			newStatement+=part;
-		}								
+		String[] noSpace=statement.split(" ");							//This first splits the spaces, or takes out all spaces
+		statement=Arrays.toString(noSpace);								//Makes the array a string 
 		int countBread=0;                                               //Rest of code below is repetition of part 1 code   
-		String result="";
-		for(int i=0;i<newStatement.length()-4;i++){
-			if(newStatement.substring(i,i+5).equals("bread")){
+		String result;
+		for(int i=0;i<statement.length()-6;i++){
+			if(statement.substring(i,i+5).equals("bread")){
 				countBread+=1;
 			}
 		}
 		if(countBread<2){
 			result=" This is not a sandwich. ";
 		}else{
-			int firstBread=newStatement.indexOf("bread")+5;
-			String lastBread=newStatement.substring(firstBread);
+			int firstBread=statement.indexOf("bread")+5;
+			String lastBread=statement.substring(firstBread);
 			String Ingredients=lastBread.substring(0, lastBread.lastIndexOf("bread"));
 			String[] sandwich=Ingredients.split("bread");
 				if(sandwich.length == 0){
 					result=" This is not a sandwich. ";
 				}else{
-					for(String part:sandwich){
-						result+=part;
-					}
+					result=Arrays.toString(sandwich);
 				}
 			}
+		result = result.substring(1,result.length()-1);
 		return(result);
 	}
 }	
