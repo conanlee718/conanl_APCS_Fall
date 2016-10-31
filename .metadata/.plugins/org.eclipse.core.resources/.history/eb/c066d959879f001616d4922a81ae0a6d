@@ -8,7 +8,7 @@ public class LotsofCopies {
 		System.out.println(num);
 		System.out.println(strMain);
 		System.out.println(Arrays.toString(arrMain));
-		//ChangeMe();
+		ChangeMe();
 		startNewInts();
 		
 	}
