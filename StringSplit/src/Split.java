@@ -5,37 +5,65 @@ public class Split {
 	//main should use methods where you make strings and call methods.
 	public static void main(String[] args) {
 		
-	/*	
-		String statement="I really like really red apples";               //This is for playing around with string split method
-		String[] newStatement=statement.split("really");
-		System.out.println(Arrays.toString(newStatement));
+		//String statement="I really like really red apples";               //This is for playing around with string split method
+		//String[] newStatement=statement.split("really");
+		//System.out.println(Arrays.toString(newStatement));
 		
-	*/
-		splitBread("applespineapplesbreadlettustomatobaconmayohambreadcheese");
+		System.out.println(splitBread("applespineapplesbreadlettustomatobaconmayohambreadcheese"));
+		System.out.println(splitBread2("apples pineapples bread lettus tomato bacon mayo ham bread cheese"));
 	}
 
 	 //chunk code: (1) is it a sandwich? (2) test 1 (3) test 2 (4) process the sandwich
 	public static String splitBread(String statement){
-		//String[] ingredients = statement.split("bread");
-		int countBread=0;                                                  //testing if it is initially a sandwich. Less than 2 breads is not a sandwich.
-		for(int i=0;i<statement.length()-6;i++){
-			if(statement.substring(i,i+4).equals("bread")){
-				countBread+=1;
-			}
-			if(countBread<2){
-					return("This is not a sandwich");
-			}else{
-				int firstBread=statement.indexOf("bread")+5;
-				String lastBread=statement.substring(firstBread);
-				String Ingredients=lastBread.substring(lastBread.indexOf(firstBread)+1, lastBread.indexOf("bread"));
-				String[] sandwich=Ingredients.split("bread");
-			
-				if(sandwich=="" || sandwich=="bread"){
-						return("This is not a sandwich");
-				}
+		int countBread=0;                                                  
+		String result;
+		for(int i=0;i<statement.length()-6;i++){						
+			if(statement.substring(i,i+5).equals("bread")){				//checks if substring is "bread"
+				countBread+=1;											//countBread counts amount of bread in given string
 			}
 		}
-		return(Arrays.toString(sandwich));
+		if(countBread<2){												//tests if string has less than 2 breads, meaning it is not a sandwich
+			result=" This is not a sandwich. ";
+		}else{
+			int firstBread=statement.indexOf("bread")+5;				//finds index after last character of "bread"
+			String lastBread=statement.substring(firstBread);
+			String Ingredients=lastBread.substring(0, lastBread.lastIndexOf("bread"));
+			String[] sandwich=Ingredients.split("bread");
+				if(sandwich.length == 0){								//if we split bread and the result has nothing in between, then it is not a sandwich
+					result=" This is not a sandwich. ";					//^^With this, we can declare "breadbreadbread" or "breadbread" or "breadbreadbreadbread" as non sandwiches
+				}else{
+					result=Arrays.toString(sandwich);
+				}
+			}
+		result = result.substring(1,result.length()-1);					//this is to take out the brackets ([]) 
+		return(result);
+	}
+	
+	public static String splitBread2(String statement){
+		String[] noSpace=statement.split(" ");							//This first splits the spaces, or takes out all spaces
+		statement=Arrays.toString(noSpace);								//Makes the array a string 
+		int countBread=0;                                               //Rest of code below is repetition of part 1 code   
+		String result;
+		for(int i=0;i<statement.length()-6;i++){
+			if(statement.substring(i,i+5).equals("bread")){
+				countBread+=1;
+			}
+		}
+		if(countBread<2){
+			result=" This is not a sandwich. ";
+		}else{
+			int firstBread=statement.indexOf("bread")+5;
+			String lastBread=statement.substring(firstBread);
+			String Ingredients=lastBread.substring(0, lastBread.lastIndexOf("bread"));
+			String[] sandwich=Ingredients.split("bread");
+				if(sandwich.length == 0){
+					result=" This is not a sandwich. ";
+				}else{
+					result=Arrays.toString(sandwich);
+				}
+			}
+		result = result.substring(1,result.length()-1);
+		return(result);
 	}
 }	
 	
