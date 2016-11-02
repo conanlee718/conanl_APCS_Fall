@@ -144,11 +144,3 @@ public class ArraysLab3
 		System.out.println(Arrays.toString(a1));
 	}
 }
-
-
-
-
-	
-	
-	
-

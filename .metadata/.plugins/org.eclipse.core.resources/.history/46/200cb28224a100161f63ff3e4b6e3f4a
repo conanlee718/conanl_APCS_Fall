@@ -15,7 +15,7 @@ public class ArraysLab3
 		assert (arr1.length > 0);
 		assert (arr2.length > 0);
 		assert (arr1.length == arr2.length);
-		int[]sumarray=new int[arr1.length];
+		int[] sumarray=arr1;
 			for(int i=0;i<arr1.length;i++){
 				sumarray[i]=arr1[i]+arr2[i];
 			}
@@ -31,11 +31,13 @@ public class ArraysLab3
 	public static int[] append(int[] arr, int num)
 	{
 		assert (arr.length > 0);
-		int[]arrplus=new int[arr.length+1];
-		for(int i=0;i<arr.length;i++){
-			arrplus[i]=arr[i];
+		int[]arrplus=new int[arr.length];
+		arrplus=arr;
+		for(int i=0;i<arrplus.length;i++){
+			if(i==arrplus.length-1){
+				arr[i+1]=num;
+			}
 		}
-		arrplus[arr.length]=num;
 		return(arrplus);
 	}
 	
@@ -49,12 +51,10 @@ public class ArraysLab3
 	public static int[] remove(int[] arr, int idx)
 	{
 		assert (arr.length >= 2);
-		int[]arrremoved=new int[arr.length-1];
-		for(int i=0;i<arr.length-1;i++){
+		int[]arrremoved=arr;
+		for(int i=0;i<arr.length;i++){
 			if(i==idx){
-				i+=1;	
-			} else {
-				arrremoved[i]=arr[i];
+				//arrremoved.remove(i);
 			}
 		}
 		return(arrremoved);
@@ -90,12 +90,10 @@ public class ArraysLab3
 	public static void rotateRight(int[] arr)
 	{
 		assert (arr.length > 0);
-		int[]arrshift=new int[arr.length-1];
-		int first=arr[0];
+		int[]arrshift=arr;
+		int first=arrshift[0];
 		for(int i =0;i<arrshift.length;i++){
-			if(i>0){
-			arrshift[i]=arr[i+1];
-			}
+			arrshift[i]=arrshift[i+1];
 		}
 		arrshift[arrshift.length-1]=first;
 	}
@@ -137,18 +135,20 @@ public class ArraysLab3
 		rotateRight(a1);
 		
 		
-		System.out.println(Arrays.toString(sumArr));
-		System.out.println(Arrays.toString(appendArr));
-		System.out.println(Arrays.toString(removeArr));
-		System.out.println(sumOfEvens);
-		System.out.println(Arrays.toString(a1));
+		
+		
+		System.out.println(Arrays.toString(sum));
+		
+		
+		System.out.println(Arrays.toString(append));
+		
+		
+		System.out.println(Arrays.toString(remove));
+		
+		System.out.println(sumEven);
+		
+		System.out.println(Arrays.toString(rotateRight));
+		
+		
 	}
 }
-
-
-
-
-	
-	
-	
-
