@@ -1,0 +1,25 @@
+//Conan Lee
+//start date: 11/2/2016
+//APCS 2nd period 
+//Arrays Lab 3 
+//GOAL :Include methods: sum, append, remove, add even sums, and rotate right.
+//GOAL :Manipulating arrays so we can comfortably work with arrays in other coding projects. 
+
+
+
+import Java.util.Arrays;
+public class ArraysLab3 {
+	public static void main(String[] args){
+		
+	}
+	
+	public 
+	
+	
+	
+	
+	
+	
+	
+	
+}
