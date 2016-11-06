@@ -13,34 +13,34 @@
  */
 public class Calculate {
 	public static int square(int number){
-		return(number*number);
+		return(number*number);									//returning square, which is number times number
 		
 	}
 	public static int cube(int number){
-		return(number*number*number);
+		return(number*number*number);							//returning cubed, which is number multiplied 3 times
 	}
 
 	public static double average(double number1, double number2){
-		return((number1+number2)/2);
+		return((number1+number2)/2);							//adding two doubles and dividing it by 2
 		
 	}
 	
-	public static double average(double number1, double number2, double number3){
-		return((number1+number2+number3)/3);
+	public static double average(double number1, double number2, double number3){			//overload of average
+		return((number1+number2+number3)/3);					//adding three doubles and dividing by 3
 	}
 
 	public static double toDegrees(double radians){
-		return(radians*(180/3.14159));
+		return(radians*(180/3.14159));							//converting to degrees, you must multiply by 180/pi
 		
 	}
 	
 	public static double toRadians(double degrees){
-		return(degrees*(3.14159/180));
+		return(degrees*(3.14159/180));							//converting to radians, you must multiply by pi/180
 		
 	}
 
 	public static double discriminant(double a, double b, double c){
-		return(b*b-4*a*c);
+		return(b*b-4*a*c);										//b^2-4ac
 		
 		
 	}
@@ -52,7 +52,7 @@ public class Calculate {
 	
 //pre:denominator cannot be 0
 	public static String toMixedNum(int numerator, int denominator){
-		if(denominator==0){
+		if(denominator==0){															//checks if denominator is 0. if true, then throw exception
 			throw new IllegalArgumentException("Denominator cannot be zero.");
 		} else if(numerator%denominator==0){
 			return(numerator/denominator+"");	
@@ -69,7 +69,7 @@ public class Calculate {
 //pre:num2!=0 because cannot divide a number by 0
 	public static boolean isDivisibleBy(int num1, int num2){
 		if(num2==0){
-			throw new IllegalArgumentException("Denominator cannot be 0.");
+			throw new IllegalArgumentException("Denominator cannot be 0.");			//if number on bottom(or denominator) is 0 then throw exception
 		} else if(num1%num2==0){
 			return true;
 			
@@ -81,15 +81,15 @@ public class Calculate {
 
 	public static double absValue(double number){
 		if(number<0){
-			return(number*-1);
+			return(number*-1);									//if negative, returns positive
 		} else {
-			return(number);
-			
+			return(number);										//if positive, returns itself
+																//therefore all results will be positive and 0 will be 0
 		}
 	}
 	
 	public static int max(int num1, int num2){
-		if(num1>num2){
+		if(num1>num2){											//compares values of num1 and num2. if num1 is greater than num2 
 			return(num1);
 		} else {
 			return(num2);
@@ -109,7 +109,7 @@ public class Calculate {
 		
 		
 	public static int min(int num1, int num2){
-		if(num1<num2){
+		if(num1<num2){										//compares values of num1 and num2. if statement for if num1 is less than num2
 			return(num1);
 		} else {
 			return(num2);
@@ -117,7 +117,7 @@ public class Calculate {
 	}
 
 	public static double round2(double number){
-        number = number * 100;
+        number = number * 100;								
         number+=.5;
         number = (int)number;
         return (number/100);
@@ -156,7 +156,7 @@ public class Calculate {
 //pre:prime numbers >1
 	public static boolean isPrime(int number){
         if(number < 2){
-            throw new IllegalArgumentException("Prime numbers are greater than 1.");
+            throw new IllegalArgumentException("Prime numbers are greater than 1.");		//prime numbers start from 2
         }
             for (int i = 2;i<number-1;i++){
                 if(Calculate.isDivisibleBy(number, i)==true){
@@ -171,7 +171,7 @@ public class Calculate {
 	public static int gcf(int a, int b){
 		int gcf=1;
 		for(int i=1;i<=a;i++){
-			if(isDivisibleBy(a,i) && isDivisibleBy(b,i)){
+			if(isDivisibleBy(a,i) && isDivisibleBy(b,i)){				//checks if both a and b are divisibly by i
 				gcf=i;
 			}
 		}
@@ -182,7 +182,7 @@ public class Calculate {
 //pre:Square root cannot be negative	
 	public static double sqrt(double number){
         if (number<0){
-            throw new IllegalArgumentException("Cannot take the square root of a negative number");
+            throw new IllegalArgumentException("Cannot take the square root of a negative number");   //cant square root negative number
         }
         double x;
         double sqrt = number / 2;
