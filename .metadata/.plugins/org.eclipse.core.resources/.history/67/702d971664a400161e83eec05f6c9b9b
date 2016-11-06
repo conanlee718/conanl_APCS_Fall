@@ -3,7 +3,7 @@
 // APCS 2nd period 
 
 // Activity 4: Responses that Transform Statements
-// chat bot 
+
 public class Magpie4 {
 	
 	//Get a default greeting and return a greeting
@@ -57,16 +57,15 @@ String response= "";
 			response = transformIWantToStatement(statement);
 		} else if(findKeyword(statement, "I want", 0)>=0){
 			response=transformIWantSomething(statement);
+		}else if(findKeyword(statement, "I")>=0 && findKeyword(statement, "you")>=0){
+			response=transformIyou(statement);
 		}else{
 			// Look for a two word (you <something> me)
 			// pattern
 			int psn = findKeyword(statement, "you", 0);
-			int psn2=findKeyword(statement, "I",0);
+
 			if (psn >= 0 && findKeyword(statement, "me", psn) >= 0) {
 				response = transformYouMeStatement(statement);
-			
-			}else if(psn2 >= 0 && findKeyword(statement, "you", psn2) >= 0){
-				response= transformIyou(statement);
 			} else {
 				response = getRandomResponse();
 			}
@@ -138,10 +137,10 @@ String response= "";
 			statement = statement.substring(0, statement.length() - 1);
 		}
 
-		int psnOfI = findKeyword(statement, "I", 0);
-		int psnOfyou = findKeyword(statement, "you", psnOfI + 3);
+		int psnOfYou = findKeyword(statement, "you", 0);
+		int psnOfMe = findKeyword(statement, "me", psnOfYou + 3);
 
-		String restOfStatement = statement.substring(psnOfI+1,psnOfyou)
+		String restOfStatement = statement.substring(psnOfYou + 3, psnOfMe)
 				.trim();
 		return "Why do you " + restOfStatement + " me?";
 	}

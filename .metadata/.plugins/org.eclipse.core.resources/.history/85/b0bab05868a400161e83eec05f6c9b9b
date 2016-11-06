@@ -141,7 +141,7 @@ String response= "";
 		int psnOfI = findKeyword(statement, "I", 0);
 		int psnOfyou = findKeyword(statement, "you", psnOfI + 3);
 
-		String restOfStatement = statement.substring(psnOfI+1,psnOfyou)
+		String restOfStatement = statement.substring(psnOfI,psnOfyou)
 				.trim();
 		return "Why do you " + restOfStatement + " me?";
 	}

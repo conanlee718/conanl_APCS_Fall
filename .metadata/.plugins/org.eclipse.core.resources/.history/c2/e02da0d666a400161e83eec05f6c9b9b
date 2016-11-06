@@ -65,7 +65,7 @@ String response= "";
 			if (psn >= 0 && findKeyword(statement, "me", psn) >= 0) {
 				response = transformYouMeStatement(statement);
 			
-			}else if(psn2 >= 0 && findKeyword(statement, "you", psn2) >= 0){
+			}else if(psn2 >= 0 && findKeyword(statement, "you", psn) >= 0){
 				response= transformIyou(statement);
 			} else {
 				response = getRandomResponse();
@@ -141,7 +141,7 @@ String response= "";
 		int psnOfI = findKeyword(statement, "I", 0);
 		int psnOfyou = findKeyword(statement, "you", psnOfI + 3);
 
-		String restOfStatement = statement.substring(psnOfI+1,psnOfyou)
+		String restOfStatement = statement.substring(psnOfI, psnOfyou+3)
 				.trim();
 		return "Why do you " + restOfStatement + " me?";
 	}
